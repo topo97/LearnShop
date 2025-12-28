@@ -3,15 +3,17 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-
-  const [isAdmin, setIsAdmin] = useState(
-    localStorage.getItem("isAdmin") === "true"
-  );
+  // Usamos sessionStorage: la sesión muere cuando el usuario cierra la pestaña
+  const [isAdmin, setIsAdmin] = useState(() => {
+    const savedStatus = sessionStorage.getItem("isAdmin");
+    return savedStatus === "true"; 
+  });
 
   const login = (user, pass) => {
+    // Es recomendable usar variables de entorno para esto en el futuro
     if (user === "admin" && pass === "1234") {
       setIsAdmin(true);
-      localStorage.setItem("isAdmin", "true");
+      sessionStorage.setItem("isAdmin", "true");
       return true;
     }
     return false;
@@ -19,14 +21,17 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     setIsAdmin(false);
-    localStorage.removeItem("isAdmin");
+    sessionStorage.removeItem("isAdmin");
+    // Opcional: limpiar todo para mayor seguridad
+    sessionStorage.clear();
   };
 
   return (
     <AuthContext.Provider value={{ isAdmin, login, logout }}>
-      { children }
+      {children}
     </AuthContext.Provider>
   );
 }
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => useContext(AuthContext);

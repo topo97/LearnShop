@@ -1,10 +1,12 @@
 export default function Footer() {
+
   return (
+
     <footer className="bg-dark text-light py-5 mt-auto">
       <div className="container">
+
         <div className="row text-center text-md-start">
 
-          {/* Marca */}
           <div className="col-md-4 mb-4">
             <h5 className="fw-bold">LernShop</h5>
             <p className="text-secondary">
@@ -29,11 +31,12 @@ export default function Footer() {
             </p>
 
             <p className="text-secondary mb-1 d-flex align-items-center gap-2">
-              <i className="bi bi-telephone-fill"></i> 
+              <i className="bi bi-telephone-fill"></i>
               0800-000-010
             </p>
           </div>
 
+          {/* Formulario de contacto */}
           <div className="col-md-4 mb-4 ms-auto">
             <form className="d-flex flex-column gap-2">
 
@@ -67,7 +70,7 @@ export default function Footer() {
                 Enviar
               </button>
             </form>
-          
+
           </div>
         </div>
 
@@ -79,4 +82,3 @@ export default function Footer() {
     </footer>
   );
 }
-

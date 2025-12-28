@@ -1,24 +1,61 @@
+/* RESET TOTAL */
 html, body, #root {
-  max-width: 1280px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: auto; 
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
-.product-card {
-  transition: transform .2s ease, box-shadow .2s ease;
+body {
+  background-color: #f4f7f6 !important;
+  color: #333333;
+}
+.navbar {
+  background-color: #1a1d20 !important; /* Gris grafito */
+  padding: 1rem 0;
 }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+.app-container {
+  background-color: #f4f7f6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+.main-content {
+  flex: 1 0 auto; /* Esto empuja al footer pero deja que el contenido crezca */
+  padding-bottom: 50px;
+}
 
+/* /* elimina reglas de bootstrap (position)]} */
+.card {
+  height: 100%; /* lista de productos mida igual */
+  border: none !important;
+  border-radius: 15px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition:  transform 0.2s ease-in-out;
 
+}
+.card:hover {
+  transform: translateY(-5px); /* Efecto al pasar el mouse */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+}
+.card-img-top {
+  height: 200px;
+  object-fit: contain; /* portadas no se deformen */
+  padding: 10px;
+
+}
+main.container {
+  flex: 1; /* Esto hace que el main crezca y mande al footer al fondo */
+  padding-top: 40px;
+  padding-bottom: 100px; /* espacio extra con el footer */
+
+}
+footer {
+  margin-top: auto; 
+  border-top: 1px solid #dee2e6; /* Una línea sutil de separación */
+  padding: 2rem 0;
+  background-color: #1a1d20;
+  color: white;
 }

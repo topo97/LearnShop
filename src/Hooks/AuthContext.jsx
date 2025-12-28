@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
+
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("isAdmin") === "true"
   );
@@ -23,7 +24,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{ isAdmin, login, logout }}>
-      {children}
+      { children }
     </AuthContext.Provider>
   );
 }

@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 export default function Hero({ heroImage }) {
+
   return (
+
     <div
       className="hero d-flex align-items-center"
       style={{
@@ -17,12 +19,14 @@ export default function Hero({ heroImage }) {
           Cursos diseñados para acompañar tu crecimiento.
         </p>
   
-        {/* Botónque lleva al producto */}
+        {/* Btn q redirig3 a productos */}
         <Link
           className='btn btn-outline-dark px-5 py-3 mt-4 fw-bold rounded-pill'
           to="/productos" 
-          > Empezar ahora
+          > <i className="bi bi-rocket-takeoff-fill me-2"></i>
+          Empezar ahora
         </Link>
+        
       </div>
     </div>
   );

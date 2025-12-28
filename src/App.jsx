@@ -14,31 +14,33 @@ import Carrito from './pages/Carrito';
 import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import AdminPanel from './pages/AdminPanel';
+import './App.css';
 
 export default function App() {
+
   return (
     <AuthProvider>
       <CartProvider>
-        <div className="d-flex flex-column min-vh-100">
+        <div className="app-container">
           <Navbar />
-          <div className="flex-grow-1  ">
+
+          <main className="container flex-grow-1 my-5">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/productos" element={<Productos />} />
-              <Route path="/producto/:id" element={<ProductoDetalle />} />
+              <Route path="/producto/:isbn13" element={<ProductoDetalle />} />
               <Route path="/carrito" element={<Carrito />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/login" element={<Login />} />
-
               <Route path="/admin" element={
                 <ProtectedRoute>
                   <AdminPanel />
                 </ProtectedRoute>
               } />
             </Routes>
-            <Footer />
-          </div>
-
+          </main>
+          
+          <Footer />
         </div>
       </CartProvider>
     </AuthProvider>

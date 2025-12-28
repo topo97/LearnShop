@@ -52,5 +52,5 @@
 - **Ruta protegidas** para el panel de administrador.
 
 ## Aclaración sobre backend
-- Los datos se cargan desde un archivo JavaScript local.
-- No se utiliza backend real, pero la aplicación está preparada para integrar una api.
+- Los datos se cargan desde un endpoint RESTful para obtener detalles técnicos (ISBN, títulos, autores y portadas).
+- Gestión de Estado: Los datos son distribuidos a través de un Context Provider, permitiendo que cualquier componente acceda a la lista de libros sin necesidad de hacer múltiples peticiones.

@@ -23,8 +23,7 @@ export function Navbar() {
               className={({ isActive }) =>
                 `nav-link ${isActive ? "fw-bold text-warning" : "text-info"}`
               }
-            >
-              Productos
+            >Productos
             </NavLink>
           </li>
 
@@ -34,8 +33,7 @@ export function Navbar() {
               className={({ isActive }) =>
                 `nav-link ${isActive ? "fw-bold text-warning" : "text-info"}`
               }
-            >
-              Admin
+            > Admin
             </NavLink>
           </li>
 
@@ -44,17 +42,17 @@ export function Navbar() {
             <Link
               to="/carrito"
               className="btn btn-outline-light position-relative"
-            >
-              <i className="bi bi-cart-fill"></i>
+            > <i className="bi bi-cart-fill"></i>
 
               {totalItems > 0 && (
                 <span className="badge rounded-pill bg-info text-dark position-absolute top-0 start-100 translate-middle">
                   {totalItems}
                 </span>
               )}
-            </Link>
-          </li>
 
+            </Link>
+
+          </li>
         </ul>
       </div>
     </nav>
